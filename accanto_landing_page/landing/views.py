@@ -4,6 +4,13 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 from landing import forms
 
+import os
+from dotenv import load_dotenv
+# Load environment variables from .env file
+load_dotenv()
+
+EMAIL_RECIPIENTS = os.getenv('EMAIL_RECIPIENTS')
+
 # Create your views here.
 def index(request):
     form = forms.FormContact()
@@ -17,12 +24,8 @@ def index(request):
             email = form.cleaned_data['email']
             telephone = form.cleaned_data['telephone']
             text = form.cleaned_data['text']
-            print('NAME: ' + name)
-            print('EMAIL: ' + email)
-            print('TELEPHONE: ' + telephone)
-            print('TEXT: ' + text)
             
-            # Corpo do e-mail que você receberá
+            # Corpo do e-mail
             corpo_email = (
                 f"Nome: {name}\n"
                 f"Email: {email}\n"
@@ -31,31 +34,19 @@ def index(request):
             )
             
             try:
-                # Envia o e-mail
                 send_mail(
-                    f"Formulário: {name}",  # Assunto do e-mail que você receberá
-                    corpo_email,                              # Corpo da mensagem
-                    settings.DEFAULT_FROM_EMAIL,              # Remetente (definido em settings.py)
-                    ['lucasandreoni1007@gmail.com'],          # Lista de destinatários (seu e-mail Outlook)
-                    fail_silently=False,                      # Para ver exceções se houver problemas
+                    f"Formulário: {name}",
+                    corpo_email,
+                    settings.DEFAULT_FROM_EMAIL,
+                    [EMAIL_RECIPIENTS],
+                    fail_silently=False,
                 )
 
-                # Se for uma requisição AJAX, retorna JSON
                 if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
                     return JsonResponse({'success': True, 'message': 'Mensagem enviada com sucesso!'})
                     
             except Exception as e:
-                 # Aqui você pode logar o erro ou exibir uma mensagem de erro
                 print(f"Erro ao enviar e-mail: {e}")
-                # Se houver erros no formulário e for AJAX
-                if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-                    return JsonResponse({'success': False, 'errors': form.errors})
-
-            # Se for uma requisição AJAX, retorna JSON
-            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-                return JsonResponse({'success': True, 'message': 'Mensagem enviada com sucesso!'})
-            else:
-                # Se houver erros no formulário e for AJAX
                 if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
                     return JsonResponse({'success': False, 'errors': form.errors})
 
