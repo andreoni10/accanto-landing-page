@@ -956,3 +956,24 @@ body {
         width: 4rem;
     }
 }
+
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed; /* Fixa o elemento na tela */
+    bottom: 20px;    /* 20px de distância da parte inferior */
+    right: 20px;     /* 20px de distância da direita */
+    z-index: 1000;   /* Garante que o ícone fique acima de outros elementos */
+}
+
+.whatsapp-icon {
+    width: 65px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+}

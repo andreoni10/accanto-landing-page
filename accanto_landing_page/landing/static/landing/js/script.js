@@ -140,9 +140,7 @@ document.querySelectorAll('.btn').forEach(btn => {
     });
     
     btn.addEventListener('mouseleave', function() {
-        if (!this.classList.contains('btn-secondary')) {
-            this.style.transform = 'translateY(0)';
-        }
+        this.style.transform = 'translateY(0)';
     });
 });
 
