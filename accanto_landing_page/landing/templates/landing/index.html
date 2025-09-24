@@ -1,461 +1,251 @@
-<!DOCTYPE html>
+{% extends 'landing/base.html' %}
 {% load static %}
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accanto Investimentos | Agente Autônomo de Investimentos - XP Investimentos</title>
-    <meta name="description" content="Agente Autônomo de Investimentos - XP Investimentos" />
-    <link rel="stylesheet" href="{% static 'landing/css/styles.css' %}" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="icon" type="image/x-icon" href="{% static 'landing/images/logo-accanto.ico' %}" />
-  </head>
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'landing/css/styles_nossa_equipe.css' %}" />
+{% endblock %}
 
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="container">
-        <div class="nav-brand">
-          <a href="#home"><img src="{% static 'landing/images/nav/logo-accanto-completo-branco.png' %}" alt="Logo Accanto" /></a>
-          &nbsp;&nbsp;
-          <a href="https://www.xpi.com.br/" target="_blank"><img src="{% static 'landing/images/nav/logo-xp.png' %}" alt="Logo XP" style="width: 30px;" /></a>
-        </div>
-
-        <nav class="nav-menu" id="nav-menu">
-          <a href="#home" class="nav-link">Início</a>
-          <a href="#sobre-a-accanto" class="nav-link">Sobre a Accanto</a>
-          <a href="#produtos-servicos" class="nav-link">Produtos &amp; Serviços</a>
-          <a href="#contato" class="nav-link">Contato</a>
-          <button id="abraSuaContaNavBtn" class="btn btn-secondary">Abra sua conta</button>
-        </nav>
-
-        <button class="mobile-menu-btn" id="mobile-menu-btn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero-background"></div>
-      <div class="container">
-        <div class="hero-content">
-          <h1 class="hero-title animate__animated animate__fadeInUp">Invista no seu futuro</h1>
-          <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">Expertise em gestão de pratimônio, investimentos e na construção de um futuro financeiro sólido.</p>
-          <div class="hero-buttons">
-            <button id="abraSuaContaBtn" class="btn btn-primary animate__animated animate__fadeInUp animate__delay-1s">Abra sua conta</button>
-          </div>
+{% block content %}
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-background"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title animate__animated animate__fadeInUp">Invista no seu futuro</h1>
+        <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">Expertise em investimentos e na construção de um futuro financeiro sólido.</p>
+        <div class="hero-buttons">
+          <button id="abraSuaContaBtn" class="card-btn animate__animated animate__fadeInUp animate__delay-1s">Abra sua conta</button>
         </div>
       </div>
-
-      <!-- Modal -->
-      <div id="modal" class="modal">
-        <div class="modal-header">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-          </svg>
-        </div>
-        <div class="modal-body">
-          <div>
-            <h2>Invista com um de nossos assessores</h2>
-            <p>Escolha um de nossos assessores para ajudá-lo a investir.</p>
-            <br />
-            <hr style="color: white; -webkit-mask: linear-gradient(270deg, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 60%); mask: linear-gradient(270deg, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 70%);" />
-            <br />
-            <ul>
-              <li>
-                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A42197" class="nav-link">Henrique de Castro Andreoni (Head da operações)</a>
-              </li>
-              <li>
-                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A95333" class="nav-link">Antônio Vicente de Souza Albuquerque Filho</a>
-              </li>
-              <li>
-                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A43115" class="nav-link">Claudia Carolina Lemos Silva Bitu</a>
-              </li>
-              <li>
-                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A21539" class="nav-link">Edlaine Carvalho Bezerra</a>
-              </li>
-              <li>
-                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A54272" class="nav-link">Erica de Andrade Bastos</a>
-              </li>
-              <li>
-                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A43091" class="nav-link">Erika Renata de Barros Leite Cabral Silva</a>
-              </li>
-              <li>
-                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A42669" class="nav-link">José Henrique dos Santos</a>
-              </li>
-              <li>
-                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A91133" class="nav-link">Lucas Cavalcanti de Sá</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sobre a Accanto -->
-    <section id="sobre-a-accanto" class="section section-alt">
-      <div class="container">
-        <div class="about-content">
-          <div class="about-text">
-            <h2>Sobre nós</h2>
-            <p>Accanto é uma palavra italiana que significa 'ao lado'. E é exatamente essa a nossa essência: sermos o seu parceiro estratégico em todas as suas jornadas financeiras.</p>
-            <p>Somos a Accanto Investimentos, um escritório de agentes autônomos credenciado à XP Investimentos. Nossa missão é clara: descomplicar o mundo dos investimentos e ajudar você a alcançar seus objetivos, com soluções financeiras personalizadas e de alta qualidade.</p>
-            <p>Com uma equipe de profissionais altamente qualificados e experientes, estamos prontos para entender seu perfil e suas necessidades, indicando as melhores opções de investimento para você.</p>
-            <p>
-              <strong>Construa um futuro financeiro sólido e seguro. A Accanto Investimentos está pronta para ser o seu alicerce nessa jornada.</strong>
-            </p>
-          </div>
-          <div class="about-image">
-            <div class="placeholder-image">
-              <img src="{% static 'landing/images/sobre-a-accanto/image-sobre-a-accanto.jpg' %}" alt="Sobre a Accanto" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Selo de Governança e Integridade -->
-    <section class="selo-gov-int-section">
-      <div class="container">
-        <div class="selo-gov-int-content">
-          <h2>Selo de Governança e Integridade</h2>
-          <p>Com muita dedicação e cuidado com nossos clientes, ganhamos o Selo de Governança e Integridade. Este selo é um reconhecimento do nosso compromisso com a transparência, ética e responsabilidade em todas as nossas operações. Continuaremos a trabalhar arduamente para manter a confiança e satisfação de nossos clientes.</p>
-          <img src="{% static 'landing/images/sobre-a-accanto/image-governanca-e-integridade.png' %}" alt="Selo de Governança e Integridade" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Produtos & Serviços -->
-    <section id="produtos-servicos" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Nossos produtos &amp; serviços</h2>
-        </div>
-
-        <div class="grid">
-          <!-- Card 1: Investimentos -->
-          <div class="card">
-            <img src="{% static 'landing/images/cards/card-investimentos-image-background.jpg' %}" alt="Investimentos" class="card-image" />
-            <h2 class="card-title card-title-investimentos">Investimentos</h2>
-            <ul class="card-list">
-              <li>Renda fixa</li>
-              <li>Fundos</li>
-              <li>Derivativos &amp; Futuros</li>
-              <li>Renda variável</li>
-              <li>Previdência</li>
-              <li>Investimento Global XP</li>
-              <li>COE</li>
-            </ul>
-          </div>
-
-          <!-- Card 2: Câmbio Instantâneo -->
-          <div class="card">
-            <img src="{% static 'landing/images/cards/card-cambioinstantaneo-image-background.jpg' %}" alt="Câmbio Instantâneo" class="card-image" />
-            <h2 class="card-title card-title-cambio">Câmbio<br />Instantâneo</h2>
-            <p class="card-description">Na transferência para o exterior, os recursos do câmbio serão creditados na mesma hora na sua contaXP International.</p>
-          </div>
-
-          <!-- Card 3: Cartão XP Visa Infinite -->
-          <div class="card">
-            <img src="{% static 'landing/images/cards/card-cartaoxpvisainfinite-image-background.jpg' %}" alt="Cartão XP Visa Infinite" class="card-image" />
-            <h2 class="card-title card-title-cartao">Cartão XP<br />Visa Infinite</h2>
-            <ul class="card-list">
-              <li>Cashback ou Pontos</li>
-              <li>Sala VIP</li>
-              <li style="list-style: none; color: #FFD700; padding-top: 1rem;">Experiências exclusivas para você.</li>
-            </ul>
-          </div>
-
-          <!-- Card 4: Consórcios -->
-          <div class="card">
-            <img src="{% static 'landing/images/cards/card-consorcios-image-background.jpg' %}" alt="Consórcios" class="card-image" />
-            <h2 class="card-title card-title-consorcios">Consórcios</h2>
-            <ul class="card-list">
-              <li>Automóveis</li>
-              <li>Caminhões</li>
-              <li>Motos</li>
-              <li>Imóveis</li>
-              <li>Serviços</li>
-            </ul>
-          </div>
-
-          <!-- Card 5: Crédito -->
-          <div class="card">
-            <img src="{% static 'landing/images/cards/card-credito-image-background.jpg' %}" alt="Crédito" class="card-image" />
-            <h2 class="card-title card-title-credito">Crédito</h2>
-            <ul class="card-list">
-              <li>Crédito com garantia</li>
-              <li>Financiamento imobiliário</li>
-              <li>Home Equity</li>
-            </ul>
-          </div>
-
-          <!-- Card 6: Seguros -->
-          <div class="card">
-            <img src="{% static 'landing/images/cards/card-seguros-image-background.jpg' %}" alt="Seguros" class="card-image" />
-            <h2 class="card-title card-title-seguros">Seguros</h2>
-            <ul class="card-list">
-              <li>Variedade de opções para atender suas necessidades</li>
-              <li>Ferramentas de gerenciamento de riscos</li>
-              <li>Parceria com grandes seguradoras</li>
-              <li>Seguros de vida (alta renda resgatável)</li>
-              <li>Seguro garantia</li>
-            </ul>
-          </div>
-
-          <!-- Card 7: Conta Digital -->
-          <div class="card">
-            <img src="{% static 'landing/images/cards/card-contadigital-image-background.jpg' %}" alt="Conta Digital" class="card-image" />
-            <h2 class="card-title card-title-contadigital">Conta Digital</h2>
-            <ul class="card-list">
-              <li>Débito automático</li>
-              <li>Cartão de débito</li>
-              <li>DDA</li>
-              <li>Pix</li>
-              <li>Portabilidade de salário</li>
-            </ul>
-          </div>
-
-          <!-- Card 8: Conta PJ XP Empresas -->
-          <div class="card">
-            <img src="{% static 'landing/images/cards/card-contapj-image-background.jpg' %}" alt="Conta PJ XP Empresas" class="card-image" />
-            <h2 class="card-title card-title-contapj">Conta PJ<br />XP Empresas</h2>
-            <ul class="card-list">
-              <li>Renda Fixa Pessoa Jurídica</li>
-              <li>Antecipação de Recebíveis de Cartão</li>
-              <li>Soluções de Crédito</li>
-              <li>Seguros PJ</li>
-              <li>Câmbio</li>
-              <li>Pagamentos</li>
-              <li>Serviços</li>
-            </ul>
-          </div>
-
-          <!-- Card 9: Conta Global -->
-          <div class="card">
-            <img src="{% static 'landing/images/cards/card-contaglobal-image-background.jpg' %}" alt="Conta PJ XP Empresas" class="card-image" />
-            <h2 class="card-title card-title-contaglobal">Conta Global</h2>
-            <ul class="card-list">
-              <li>Aporte mínimo acessível</li>
-              <li>Sem taxas de abertura ou inatividade</li>
-              <li>Operação em dólar</li>
-              <li>Cartão Global</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    {% comment %} <section class="cta-section">
-      <div class="container">
-        <div class="cta-content">
-          <h2>Pronto para investir com segurança?</h2>
-          <p>Fale com nossos especialistas e comece a construir seu futuro financeiro hoje mesmo.</p>
-          <button class="btn btn-primary btn-large">Falar Conosco</button>
-        </div>
-      </div>
-    </section> {% endcomment %}
-
-    <!-- Contato -->
-    <section id="contato" class="section section-alt">
-      <div class="container">
-        <div class="contact-grid">
-          <div class="contact-info">
-            <div class="contact-header">
-              <h2>Entre em Contato</h2>
-              <p>Preencha o formulário ou utilize nossos canais de contato para falar diretamente com um especialista Accanto Investimentos. Teremos prazer em responder suas dúvidas e apresentar as melhores soluções para o seu perfil.</p>
-            </div>
-
-            <div class="contact-item">
-              <div>
-                <h4>Email</h4>
-                <p>contato@gmail.com</p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div>
-                <h4>Telefone</h4>
-                <p>(81) 2011-5984</p>
-              </div>
-            </div>
-          </div>
-
-          <form class="contact-form" method="POST">
-            <div class="form-group">
-              <label for="name">Nome</label>
-              {{ form.name }}
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email</label>
-              {{ form.email }}
-            </div>
-
-            <div class="form-group">
-              <label for="telefone">Telefone</label>
-              {{ form.telephone }}
-            </div>
-
-            <div class="form-group">
-              <label for="message">Mensagem</label>
-              {{ form.text }}
-            </div>
-            {% csrf_token %}
-            <button type="submit" class="btn btn-primary">Enviar</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- Visite nosso escritório -->
-    <section id="escritorio" class="escritorio section-escritorio">
-      <div class="container">
-        <div class="contact-grid">
-          <div class="escritorio-header">
-            <h2>Venha conhecer nosso escritório</h2>
-            <p>Agende uma visita e descubra como a Accanto Investimentos pode transformar sua experiência financeira. Esperamos por você para construir juntos um futuro de sucesso.</p>
-            <h4>Localização</h4>
-            <p>
-              RioMar Trade Center <br />Av. República do Líbano, 251, Pina, Recife - PE, 51110-160<br />Torre 4 - Salas 409/411
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-brand">
-            <a href="#home"><img src="{% static 'landing/images/nav/logo-accanto-completo-branco.png' %}" alt="Logo Accanto" /></a>
-            &nbsp;&nbsp;
-            <a href="https://www.xpi.com.br/" target="_blank"><img src="{% static 'landing/images/nav/logo-xp.png' %}" alt="Logo XP" style="width: 30px;" /></a>
-            <p>A Accanto Investimentos é uma empresa de agentes autônomos de investimentos credenciada à XP Investimentos. Nossa missão é ajudar você a alcançar seus objetivos financeiros, oferecendo soluções personalizadas e de qualidade.</p>
-          </div>
-
-          <div class="footer-links">
-            <div class="footer-column">
-              <h4>Menu</h4>
-              <a href="#home">Início</a>
-              <a href="#sobre-a-accanto">Sobre a Accanto</a>
-              <a href="#produtos-servicos">Produtos &amp; Serviços</a>
-              <a href="#contato">Contato</a>
-            </div>
-
-            <div class="footer-column footer-column-social">
-              <h4>Acompanhe-nos em nossas redes</h4>
-              <a href="https://www.instagram.com/accantoinvestimentos/"><i class="fa fa-instagram"></i></a>
-              <a href="https://www.linkedin.com/company/accanto-investimentos-xp-investimentos/"><i class="fa fa-linkedin-square"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <p>&copy; 2025 Accanto Investimentos. Todos os direitos reservados.</p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- WhatsApp Float Button -->
-    <div class="whatsapp-float">
-      <a href="https://wa.me/5581992025501?text=Olá%20gostaria%20de%20saber%20mais" target="_blank"><img src="{% static 'landing/images/whatsapp-icon.png' %}" alt="WhatsApp" class="whatsapp-icon" /></a>
     </div>
+  </section>
 
-    <script src="{% static 'landing/js/script.js' %}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Sobre a Accanto -->
+  <section id="sobre-a-accanto" class="section section-alt">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>Sobre nós</h2>
+          <p>Accanto é uma palavra italiana que significa 'ao lado'. E é exatamente essa a nossa essência: sermos o seu parceiro estratégico em todas as suas jornadas financeiras.</p>
+          <p>Somos a Accanto Investimentos, um escritório de assessores credenciados à XP Investimentos. Nossa missão é clara: descomplicar o mundo dos investimentos e ajudar você a alcançar seus objetivos, com soluções financeiras personalizadas e de alta qualidade.</p>
+          <p>Com uma equipe de profissionais altamente qualificados e experientes, estamos prontos para entender seu perfil e suas necessidades, indicando as melhores opções de investimento para você.</p>
+          <p>
+            <strong>Construa um futuro financeiro sólido e seguro. A Accanto Investimentos está pronta para ser o seu alicerce nessa jornada.</strong>
+          </p>
+        </div>
+        <div class="about-image">
+          <div class="placeholder-image">
+            <img src="{% static 'landing/images/sobre-a-accanto/image-sobre-a-accanto.jpg' %}" alt="Sobre a Accanto" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-      // Modal Script
-      var modal = document.getElementById('modal')
-      var btn = document.getElementById('abraSuaContaBtn')
-      var nav_btn = document.getElementById('abraSuaContaNavBtn')
-      var span = document.getElementsByClassName('close')[0]
-      
-      function showModal() {
-        modal.classList.add('show')
-      }
-      
-      function hideModal() {
-        modal.classList.remove('show')
-      }
-      
-      btn.onclick = showModal
-      nav_btn.onclick = showModal
-      
-      span.onclick = hideModal
-      
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          hideModal()
-        }
-      }
-      
-      // Formatação telefone (XX) XXXXX-XXXX
-      document.getElementById('telefone').addEventListener('input', (e) => {
-        let v = e.target.value.replace(/\D/g, '').slice(0, 11)
-        e.target.value = v.replace(/^(\d{2})(\d{0,5})(\d{0,4})$/, (_, a, b, c) => {
-          return '(' + a + (b ? ') ' + b : '') + (c ? '-' + c : '')
-        })
-      })
-      
-      // Envio do formulário via AJAX
-      document.querySelector('.contact-form').addEventListener('submit', function (e) {
-        e.preventDefault() // Previne o comportamento padrão do formulário
-      
-        const form = this
-        const submitBtn = form.querySelector('button[type="submit"]')
-        const originalText = submitBtn.textContent
-      
-        // Mostra estado de carregamento
-        submitBtn.textContent = 'Enviando...'
-        submitBtn.disabled = true
-      
-        // Coleta os dados do formulário
-        const formData = new FormData(form)
-      
-        // Envia via AJAX
-        fetch(window.location.pathname, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRFToken': formData.get('csrfmiddlewaretoken')
-          }
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.success) {
-              // Sucesso - mostra mensagem e limpa formulário
-              alert('Mensagem enviada com sucesso! Entraremos em contato em breve.')
-              form.reset()
-            } else {
-              // Erro - mostra erros
-              let errorMessage = 'Erro ao enviar formulário:\n'
-              for (let field in data.errors) {
-                errorMessage += `${field}: ${data.errors[field].join(', ')}\n`
-              }
-              alert(errorMessage)
-            }
-          })
-          .catch((error) => {
-            console.error('Erro:', error)
-            alert('Erro ao enviar formulário. Tente novamente.')
-          })
-          .finally(() => {
-            // Restaura botão
-            submitBtn.textContent = originalText
-            submitBtn.disabled = false
-          })
-      })
-    </script>
-  </body>
-</html>
+  <!-- Selo de Governança e Integridade -->
+  <section class="selo-gov-int-section">
+    <div class="container">
+      <div class="selo-gov-int-content">
+        <h2>Selo de Governança e Integridade</h2>
+        <p>Com muita dedicação e cuidado com nossos clientes, ganhamos o Selo de Governança e Integridade. Este selo é um reconhecimento do nosso compromisso com a transparência, ética e responsabilidade em todas as nossas operações. Continuaremos a trabalhar arduamente para manter a confiança e satisfação de nossos clientes.</p>
+        <img src="{% static 'landing/images/sobre-a-accanto/Certificado-Selo.jpg' %}" alt="Selo de Governança e Integridade" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Produtos & Serviços -->
+  <section id="produtos-servicos" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nossos produtos &amp; serviços</h2>
+      </div>
+
+      <div class="grid">
+        <!-- Card 1: Investimentos -->
+        <div class="card">
+          <img src="{% static 'landing/images/cards/card-investimentos-image-background.jpg' %}" alt="Investimentos" class="card-image" />
+          <h2 class="card-title card-title-investimentos">Investimentos</h2>
+          <ul class="card-list">
+            <li>Renda fixa</li>
+            <li>Fundos</li>
+            <li>Derivativos &amp; Futuros</li>
+            <li>Renda variável</li>
+            <li>Previdência</li>
+            <li>Investimento Global XP</li>
+            <li>COE</li>
+          </ul>
+        </div>
+
+        <!-- Card 2: Câmbio Instantâneo -->
+        <div class="card">
+          <img src="{% static 'landing/images/cards/card-cambioinstantaneo-image-background.jpg' %}" alt="Câmbio Instantâneo" class="card-image" />
+          <h2 class="card-title card-title-cambio">Câmbio<br />Instantâneo</h2>
+          <p class="card-description">Na transferência para o exterior, os recursos do câmbio serão creditados na mesma hora na sua contaXP International.</p>
+        </div>
+
+        <!-- Card 3: Cartão XP Visa Infinite -->
+        <div class="card">
+          <img src="{% static 'landing/images/cards/card-cartaoxpvisainfinite-image-background.jpg' %}" alt="Cartão XP Visa Infinite" class="card-image" />
+          <h2 class="card-title card-title-cartao">Cartão XP<br />Visa Infinite &amp; Legacy</h2>
+          <ul class="card-list">
+            <li>Cashback ou Pontos</li>
+            <li>Sala VIP</li>
+            <li style="list-style: none; color: #FFD700; padding-top: 1rem;">Experiências exclusivas para você.</li>
+          </ul>
+        </div>
+
+        <!-- Card 4: Consórcios -->
+        <div class="card">
+          <img src="{% static 'landing/images/cards/card-consorcios-image-background.jpg' %}" alt="Consórcios" class="card-image" />
+          <h2 class="card-title card-title-consorcios">Consórcios</h2>
+          <ul class="card-list">
+            <li>Automóveis</li>
+            <li>Caminhões</li>
+            <li>Motos</li>
+            <li>Imóveis</li>
+            <li>Serviços</li>
+          </ul>
+        </div>
+
+        <!-- Card 5: Crédito -->
+        <div class="card">
+          <img src="{% static 'landing/images/cards/card-credito-image-background.jpg' %}" alt="Crédito" class="card-image" />
+          <h2 class="card-title card-title-credito">Crédito</h2>
+          <ul class="card-list">
+            <li>Crédito com garantia</li>
+            <li>Financiamento imobiliário</li>
+            <li>Home Equity</li>
+          </ul>
+        </div>
+
+        <!-- Card 6: Seguros -->
+        <div class="card">
+          <img src="{% static 'landing/images/cards/card-seguros-image-background.jpg' %}" alt="Seguros" class="card-image" />
+          <h2 class="card-title card-title-seguros">Seguros</h2>
+          <ul class="card-list">
+            <li>Variedade de opções para atender suas necessidades</li>
+            <li>Ferramentas de gerenciamento de riscos</li>
+            <li>Parceria com grandes seguradoras</li>
+            <li>Seguros de vida (alta renda resgatável)</li>
+            <li>Seguro garantia</li>
+          </ul>
+        </div>
+
+        <!-- Card 7: Conta Digital -->
+        <div class="card">
+          <img src="{% static 'landing/images/cards/card-contadigital-image-background.jpg' %}" alt="Conta Digital" class="card-image" />
+          <h2 class="card-title card-title-contadigital">Conta Digital</h2>
+          <ul class="card-list">
+            <li>Débito automático</li>
+            <li>Cartão de débito</li>
+            <li>DDA</li>
+            <li>Pix</li>
+            <li>Portabilidade de salário</li>
+          </ul>
+        </div>
+
+        <!-- Card 8: Conta PJ XP Empresas -->
+        <div class="card">
+          <img src="{% static 'landing/images/cards/card-contapj-image-background.jpg' %}" alt="Conta PJ XP Empresas" class="card-image" />
+          <h2 class="card-title card-title-contapj">Conta PJ<br />XP Empresas</h2>
+          <ul class="card-list">
+            <li>Renda Fixa Pessoa Jurídica</li>
+            <li>Antecipação de Recebíveis de Cartão</li>
+            <li>Soluções de Crédito</li>
+            <li>Seguros PJ</li>
+            <li>Câmbio</li>
+            <li>Pagamentos</li>
+            <li>Serviços</li>
+          </ul>
+        </div>
+
+        <!-- Card 9: Conta Global -->
+        <div class="card">
+          <img src="{% static 'landing/images/cards/card-contaglobal-image-background.jpg' %}" alt="Conta PJ XP Empresas" class="card-image" />
+          <h2 class="card-title card-title-contaglobal">Conta Global</h2>
+          <ul class="card-list">
+            <li>Aporte mínimo acessível</li>
+            <li>Sem taxas de abertura ou inatividade</li>
+            <li>Operação em dólar</li>
+            <li>Cartão Global</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="section section-alt">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-header">
+            <h2>Entre em Contato</h2>
+            <p>Preencha o formulário ou utilize nossos canais de contato para falar diretamente com um especialista Accanto Investimentos. Teremos prazer em responder suas dúvidas e apresentar as melhores soluções para o seu perfil.</p>
+          </div>
+
+          <div class="contact-item">
+            <div>
+              <h4>Email</h4>
+              <p>accantodigital@accantoinvestimentos.com.br</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div>
+              <h4>Telefone</h4>
+              <p>(81) 2011-5984</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" method="POST">
+          <div class="form-group">
+            <label for="name">Nome</label>
+            {{ form.name }}
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            {{ form.email }}
+          </div>
+
+          <div class="form-group">
+            <label for="telefone">Telefone</label>
+            {{ form.telephone }}
+          </div>
+
+          <div class="form-group">
+            <label for="message">Mensagem</label>
+            {{ form.text }}
+          </div>
+
+          <div class="form-group form-consent">
+            {{ form.data_consent }}
+            <label for="data_consent">{{ form.data_consent.label }}</label>
+          </div>
+          {% csrf_token %}
+          <button type="submit" class="card-btn">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visite nosso escritório -->
+  <section id="escritorio" class="escritorio section-escritorio">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="escritorio-header">
+          <h2>Venha conhecer nosso escritório</h2>
+          <p>Agende uma visita e descubra como a Accanto Investimentos pode transformar sua experiência financeira. Esperamos por você para construir juntos um futuro de sucesso.</p>
+          <h4>Localização</h4>
+          <p>
+            RioMar Trade Center <br />Av. República do Líbano, 251, Pina, Recife - PE, 51110-160<br />Torre 4 - Salas 409/411
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+{% endblock %}

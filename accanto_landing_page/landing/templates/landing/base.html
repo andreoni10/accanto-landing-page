@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accanto Investimentos | Investimentos - XP</title>
+    <meta name="description" content="Accanto Investimentos | Investimentos - XP" />
+    <link rel="stylesheet" href="{% static 'landing/css/styles.css' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="icon" type="image/x-icon" href="{% static 'landing/images/logo-accanto.ico' %}" />
+    {% block extra_head %}
+    {% endblock %}
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="nav-brand">
+          <a href="{% url 'index' %}#home"><img src="{% static 'landing/images/nav/logo-accanto-completo-branco.png' %}" alt="Logo Accanto" /></a>
+          &nbsp;&nbsp;
+          <a href="https://www.xpi.com.br/" target="_blank"><img src="{% static 'landing/images/nav/logo-xp.png' %}" alt="Logo XP" style="width: 30px;" /></a>
+        </div>
+
+        <nav class="nav-menu" id="nav-menu">
+          <a href="{% url 'index' %}#home" class="nav-link">Início</a>
+          <a href="{% url 'index' %}#sobre-a-accanto" class="nav-link">Sobre a Accanto</a>
+          <a href="{% url 'index' %}#produtos-servicos" class="nav-link">Produtos &amp; Serviços</a>
+          <a href="{% url 'nossa_equipe' %}" class="nav-link">Nossa Equipe</a>
+          <a href="{% url 'index' %}#contato" class="nav-link">Contato</a>
+          <button id="abraSuaContaNavBtn" class="btn btn-secondary">Abra sua conta</button>
+        </nav>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <a href="{% url 'index' %}#home"><img src="{% static 'landing/images/nav/logo-accanto-completo-branco.png' %}" alt="Logo Accanto" /></a>
+            &nbsp;&nbsp;
+            <a href="https://www.xpi.com.br/" target="_blank"><img src="{% static 'landing/images/nav/logo-xp.png' %}" alt="Logo XP" style="width: 30px;" /></a>
+            <p>A Accanto Investimentos é uma empresa de assessoria de investimentos credenciada à XP Investimentos. Nossa missão é ajudar você a alcançar seus objetivos financeiros, oferecendo soluções personalizadas e de qualidade.</p>
+          </div>
+
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Menu</h4>
+              <a href="{% url 'index' %}#home">Início</a>
+              <a href="{% url 'index' %}#sobre-a-accanto">Sobre a Accanto</a>
+              <a href="{% url 'index' %}#produtos-servicos">Produtos &amp; Serviços</a>
+              <a href="{% url 'nossa_equipe' %}">Nossa Equipe</a>
+              <a href="{% url 'index' %}#contato">Contato</a>
+              <a href="{% url 'politica_de_privacidade' %}">Politica de Privacidade</a>
+            </div>
+
+            <div class="footer-column footer-column-social">
+              <h4>Acompanhe-nos em nossas redes</h4>
+              <a href="https://www.instagram.com/accantoinvestimentos/"><i class="fa fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/company/accanto-investimentos-xp-investimentos/"><i class="fa fa-linkedin-square"></i></a>
+
+              <br /><br />
+              <br /><br /><br />
+              <p>Site desenvolvido por:<br />Lucas Hernandes Andreoni</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Accanto Investimentos. Todos os direitos reservados.</p>
+          <p>A Accanto Assessoria de Investimentos LTDA, inscrita sob o CNPJ: 52.127.428/0001-01 é uma empresa de Assessoria de Investimento devidamente registrada na Comissão de Valores Mobiliários na forma da Resolução CVM 178/23 (“Sociedade”), que mantém contrato de distribuição de produtos financeiros com a XP Investimentos Corretora de Câmbio, Títulos e Valores Mobiliários S.A. (“XP”) e pode, por conta e ordem dos seus clientes, operar no mercado de capitais segundo a legislação vigente. Na forma da legislação da CVM, o Assessor de Investimento não pode administrar ou gerir o patrimônio de investidores. O investimento em ações é um investimento de risco e rentabilidade passada não é garantia de rentabilidade futura. Na realização de operações com derivativos existe a possibilidade de perdas superiores aos valores investidos, podendo resultar em significativas perdas patrimoniais A Sociedade poderá exercer atividades complementares relacionadas aos mercados financeiro, securitário, de previdência e capitalização, desde que não conflitem com a atividade de assessoria de investimentos, podendo ser realizada por meio da pessoa jurídica acima descrita ou por meio de pessoa jurídica terceira. Todas as atividades são prestadas mantendo a devida segregação e em cumprimento ao quanto previsto nas regras da CVM ou de outros órgãos reguladores e autorreguladores. Para informações e dúvidas sobre produtos, contate seu assessor de investimentos. Para reclamações, contate a Ouvidoria da XP pelo telefone 0800 722 3730.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal -->
+      <div id="modal" class="modal">
+        <div class="modal-header">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </div>
+        <div class="modal-body">
+          <div>
+            <h2>Invista com um de nossos assessores</h2>
+            <p>Escolha um de nossos assessores para ajudá-lo a investir.</p>
+            <br />
+            <hr style="color: white; -webkit-mask: linear-gradient(270deg, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 60%); mask: linear-gradient(270deg, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 70%);" />
+            <br />
+            <ul>
+              <li>
+                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A42197" target="_blank" class="nav-link">Henrique de Castro Andreoni (Head da operações)</a>
+              </li>
+              <li>
+                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A95333" target="_blank" class="nav-link">Antônio Vicente de Souza Albuquerque Filho</a>
+              </li>
+              <li>
+                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A43115" target="_blank" class="nav-link">Claudia Carolina Lemos Silva Bitu</a>
+              </li>
+              <li>
+                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A21539" target="_blank" class="nav-link">Edlaine Carvalho Bezerra</a>
+              </li>
+              <li>
+                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A54272" target="_blank" class="nav-link">Erica de Andrade Bastos</a>
+              </li>
+              <li>
+                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A43091" target="_blank" class="nav-link">Erika Renata de Barros Leite Cabral Silva</a>
+              </li>
+              <li>
+                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A42669" target="_blank" class="nav-link">José Henrique dos Santos</a>
+              </li>
+              <li>
+                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A91133" target="_blank" class="nav-link">Lucas Cavalcanti de Sá</a>
+              </li>
+              <li>
+                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A43086" target="_blank" class="nav-link">Manuella Garret de Melo Carrazzone</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+      <a href="https://wa.me/5581992341557?text=Olá!%20Gostaria%20de%20mais%20informações." target="_blank"><img src="{% static 'landing/images/whatsapp-icon.png' %}" alt="WhatsApp" class="whatsapp-icon" /></a>
+    </div>
+
+    <script src="{% static 'landing/js/script.js' %}"></script>
+    <script>
+        // Formatação telefone (XX) XXXXX-XXXX
+      document.getElementById('telefone').addEventListener('input', (e) => {
+        let v = e.target.value.replace(/\D/g, '').slice(0, 11)
+        e.target.value = v.replace(/^(\d{2})(\d{0,5})(\d{0,4})$/, (_, a, b, c) => {
+          return '(' + a + (b ? ') ' + b : '') + (c ? '-' + c : '')
+        })
+      })
+      
+      // Envio do formulário via AJAX
+      document.querySelector('.contact-form').addEventListener('submit', function (e) {
+        e.preventDefault() // Previne o comportamento padrão do formulário
+      
+        const form = this
+        const submitBtn = form.querySelector('button[type="submit"]')
+        const originalText = submitBtn.textContent
+      
+        // Mostra estado de carregamento
+        submitBtn.textContent = 'Enviando...'
+        submitBtn.disabled = true
+      
+        // Coleta os dados do formulário
+        const formData = new FormData(form)
+      
+        // Envia via AJAX
+        fetch(window.location.pathname, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+          }
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              // Sucesso - mostra mensagem e limpa formulário
+              alert('Mensagem enviada com sucesso! Entraremos em contato em breve.')
+              form.reset()
+            } else {
+              // Erro - mostra erros
+              let errorMessage = 'Erro ao enviar formulário:\n'
+              for (let field in data.errors) {
+                errorMessage += `${field}: ${data.errors[field].join(', ')}\n`
+              }
+              alert(errorMessage)
+            }
+          })
+          .catch((error) => {
+            console.error('Erro:', error)
+            alert('Erro ao enviar formulário. Tente novamente.')
+          })
+          .finally(() => {
+            // Restaura botão
+            submitBtn.textContent = originalText
+            submitBtn.disabled = false
+          })
+      })
+    </script>
+
+    <script>
+      // Modal Script
+      var modal = document.getElementById('modal')
+      var btn = document.getElementById('abraSuaContaBtn')
+      var nav_btn = document.getElementById('abraSuaContaNavBtn')
+      var span = document.getElementsByClassName('close')[0]
+      
+      function showModal() {
+        modal.classList.add('show')
+      }
+      
+      function hideModal() {
+        modal.classList.remove('show')
+      }
+      
+      if (btn) {
+        btn.onclick = showModal
+      }
+      if (nav_btn) {
+        nav_btn.onclick = showModal
+      }
+
+      if (span) {
+        span.onclick = hideModal
+      }
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          hideModal()
+        }
+      }
+    </script>
+  </body>
+</html>

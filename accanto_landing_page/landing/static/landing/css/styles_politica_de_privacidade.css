@@ -1,0 +1,681 @@
+/* Reset e configurações base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.politica-de-privacidade-section {
+    background:
+        radial-gradient(ellipse at top, rgba(255, 215, 0, 0.08) 0%, transparent 60%),
+        linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    color: #e8e8e8;
+    min-height: 100vh;
+    padding: 4rem 0;
+    position: relative;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 2rem;
+    max-width: 1200px;
+}
+
+.politica-de-privacidade-content {
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 4rem 3rem;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 215, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Elemento decorativo interno */
+.politica-de-privacidade-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+    opacity: 0.5;
+}
+
+/* Tipografia */
+.politica-de-privacidade-content h2 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 300;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    letter-spacing: -0.02em;
+}
+
+.politica-de-privacidade-content h2::before {
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #FFD700;
+    opacity: 0.6;
+}
+
+.politica-de-privacidade-content h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+    margin: 1.5rem auto 0;
+}
+
+.politica-de-privacidade-content h3 {
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    font-weight: 500;
+    color: #FFD700;
+    margin: 3rem 0 1.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    letter-spacing: -0.01em;
+}
+
+.politica-de-privacidade-content h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 1.2rem;
+    background: linear-gradient(180deg, #FFD700, #FFA500);
+    border-radius: 2px;
+}
+
+.politica-de-privacidade-content h4 {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 400;
+    color: #ffffff;
+    margin: 2rem 0 1rem 0;
+    opacity: 0.95;
+    border-left: 2px solid rgba(255, 215, 0, 0.3);
+    padding-left: 1rem;
+}
+
+.politica-de-privacidade-content p {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #e8e8e8;
+    text-align: left;
+    font-weight: 300;
+}
+
+.politica-de-privacidade-content p strong {
+    color: #FFD700;
+    font-weight: 500;
+}
+
+/* Listas estilizadas */
+.politica-de-privacidade-content ul {
+    margin: 1.5rem 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.politica-de-privacidade-content ul li {
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+    color: #e8e8e8;
+    position: relative;
+    padding-left: 2.5rem;
+    font-weight: 300;
+}
+
+.politica-de-privacidade-content ul li::before {
+    content: '';
+    position: absolute;
+    left: 0.8rem;
+    top: 0.75rem;
+    width: 6px;
+    height: 6px;
+    background: #FFD700;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.politica-de-privacidade-content ul li strong {
+    color: #FFD700;
+    font-weight: 500;
+}
+
+/* Caixa de contato especial */
+.contact-box {
+    background: linear-gradient(135deg,
+            rgba(255, 215, 0, 0.1) 0%,
+            rgba(255, 165, 0, 0.05) 50%,
+            rgba(255, 215, 0, 0.08) 100%) !important;
+    border: 1px solid rgba(255, 215, 0, 0.2) !important;
+    border-radius: 16px !important;
+    padding: 2.5rem !important;
+    margin: 3rem 0 !important;
+    position: relative;
+    backdrop-filter: blur(5px);
+    box-shadow:
+        0 10px 30px rgba(255, 215, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.contact-box::before {
+    content: '✉';
+    position: absolute;
+    top: -0.5rem;
+    right: 1.5rem;
+    background: #FFD700;
+    color: #000;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.contact-box p {
+    margin-bottom: 1rem !important;
+    font-size: clamp(0.95rem, 2.2vw, 1.05rem) !important;
+    color: #ffffff !important;
+    font-weight: 300;
+}
+
+.contact-box p strong {
+    color: #FFD700 !important;
+    font-weight: 500 !important;
+    font-size: clamp(1rem, 2.5vw, 1.1rem) !important;
+}
+
+/* Links elegantes */
+.politica-de-privacidade-content a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: 400;
+    position: relative;
+    word-break: break-word;
+    transition: color 0.3s ease;
+}
+
+.politica-de-privacidade-content a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    transition: width 0.3s ease;
+}
+
+.politica-de-privacidade-content a:hover {
+    color: #FFA500;
+}
+
+.politica-de-privacidade-content a:hover::after {
+    width: 100%;
+}
+
+/* Parágrafo final */
+.politica-de-privacidade-content .final-note {
+    background: rgba(255, 215, 0, 0.05) !important;
+    border-left: 3px solid rgba(255, 215, 0, 0.3) !important;
+    padding: 1.5rem !important;
+    margin: 3rem 0 0 0 !important;
+    border-radius: 0 8px 8px 0 !important;
+    font-style: italic !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem) !important;
+    line-height: 1.6 !important;
+}
+
+/* Responsividade aprimorada */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .politica-de-privacidade-content {
+        padding: 3.5rem 2.5rem;
+    }
+    
+    .politica-de-privacidade-content h2 {
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .politica-de-privacidade-section {
+        padding: 2rem 0;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .politica-de-privacidade-content {
+        padding: 2.5rem 2rem;
+        border-radius: 16px;
+        margin: 1rem 0;
+    }
+
+    .politica-de-privacidade-content h2 {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        margin-bottom: 2rem;
+    }
+
+    .politica-de-privacidade-content h3 {
+        padding-left: 1rem;
+        margin: 2.5rem 0 1rem 0;
+        font-size: clamp(1.1rem, 4vw, 1.4rem);
+    }
+
+    .politica-de-privacidade-content h3::before {
+        width: 3px;
+        height: 1rem;
+    }
+
+    .politica-de-privacidade-content h4 {
+        margin: 1.5rem 0 0.8rem 0;
+    }
+
+    .politica-de-privacidade-content ul li {
+        padding-left: 2rem;
+        font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+        margin-bottom: 0.6rem;
+    }
+
+    .politica-de-privacidade-content ul li::before {
+        left: 0.6rem;
+        top: 0.6rem;
+        width: 5px;
+        height: 5px;
+    }
+
+    .contact-box {
+        padding: 2rem 1.5rem !important;
+        margin: 2rem 0 !important;
+        border-radius: 12px !important;
+    }
+
+    .contact-box::before {
+        top: -0.4rem;
+        right: 1rem;
+        width: 1.8rem;
+        height: 1.8rem;
+        font-size: 0.8rem;
+    }
+
+    .politica-de-privacidade-content .final-note {
+        padding: 1.2rem !important;
+        margin: 2rem 0 0 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .politica-de-privacidade-section {
+        padding: 1.5rem 0;
+    }
+
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    .politica-de-privacidade-content {
+        padding: 2rem 1.5rem;
+        border-radius: 12px;
+    }
+
+    .politica-de-privacidade-content h2 {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.01em;
+    }
+
+    .politica-de-privacidade-content h2::after {
+        width: 40px;
+        margin: 1rem auto 0;
+    }
+
+    .politica-de-privacidade-content h3 {
+        margin: 2rem 0 1rem 0;
+        font-size: clamp(1rem, 4.5vw, 1.2rem);
+        padding-left: 0.8rem;
+    }
+
+    .politica-de-privacidade-content h3::before {
+        width: 2px;
+        height: 0.8rem;
+    }
+
+    .politica-de-privacidade-content h4 {
+        margin: 1.2rem 0 0.6rem 0;
+        padding-left: 0.8rem;
+    }
+
+    .politica-de-privacidade-content p {
+        margin-bottom: 1.2rem;
+        line-height: 1.6;
+    }
+
+    .politica-de-privacidade-content ul li {
+        padding-left: 1.5rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
+    }
+
+    .politica-de-privacidade-content ul li::before {
+        left: 0.4rem;
+        top: 0.5rem;
+        width: 4px;
+        height: 4px;
+    }
+
+    .contact-box {
+        padding: 1.5rem 1rem !important;
+        margin: 1.5rem 0 !important;
+        border-radius: 10px !important;
+    }
+
+    .contact-box::before {
+        top: -0.3rem;
+        right: 0.8rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 0.7rem;
+    }
+
+    .politica-de-privacidade-content .final-note {
+        padding: 1rem !important;
+        margin: 1.5rem 0 0 0 !important;
+        border-radius: 0 6px 6px 0 !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    .politica-de-privacidade-content {
+        padding: 1.5rem 1rem;
+        border-radius: 10px;
+    }
+
+    .politica-de-privacidade-content h2 {
+        font-size: clamp(1.3rem, 8vw, 1.8rem);
+        margin-bottom: 1.2rem;
+    }
+
+    .politica-de-privacidade-content h3 {
+        font-size: clamp(0.9rem, 5vw, 1.1rem);
+        margin: 1.5rem 0 0.8rem 0;
+        padding-left: 0.6rem;
+    }
+
+    .politica-de-privacidade-content h4 {
+        margin: 1rem 0 0.5rem 0;
+        padding-left: 0.6rem;
+    }
+
+    .politica-de-privacidade-content p {
+        margin-bottom: 1rem;
+    }
+
+    .politica-de-privacidade-content ul li {
+        padding-left: 1.2rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .politica-de-privacidade-content ul li::before {
+        left: 0.2rem;
+        top: 0.4rem;
+        width: 3px;
+        height: 3px;
+    }
+
+    .contact-box {
+        padding: 1.2rem 0.8rem !important;
+        margin: 1.2rem 0 !important;
+    }
+
+    .contact-box::before {
+        top: -0.25rem;
+        right: 0.6rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        font-size: 0.6rem;
+    }
+
+    .politica-de-privacidade-content .final-note {
+        padding: 0.8rem !important;
+        margin: 1.2rem 0 0 0 !important;
+    }
+}
+
+/* Telas muito pequenas - smartwatches, celulares antigos */
+@media (max-width: 320px) {
+    .politica-de-privacidade-section {
+        padding: 1rem 0;
+    }
+
+    .container {
+        padding: 0 0.25rem;
+    }
+
+    .politica-de-privacidade-content {
+        padding: 1rem 0.75rem;
+        border-radius: 8px;
+        margin: 0.5rem 0;
+    }
+
+    .politica-de-privacidade-content h2 {
+        font-size: clamp(1.1rem, 9vw, 1.5rem);
+        margin-bottom: 1rem;
+        line-height: 1.1;
+    }
+
+    .politica-de-privacidade-content h2::after {
+        width: 30px;
+        margin: 0.8rem auto 0;
+    }
+
+    .politica-de-privacidade-content h3 {
+        font-size: clamp(0.8rem, 6vw, 1rem);
+        margin: 1.2rem 0 0.6rem 0;
+        padding-left: 0.5rem;
+        line-height: 1.2;
+    }
+
+    .politica-de-privacidade-content h3::before {
+        width: 2px;
+        height: 0.6rem;
+    }
+
+    .politica-de-privacidade-content h4 {
+        font-size: clamp(0.75rem, 5vw, 0.9rem);
+        margin: 0.8rem 0 0.4rem 0;
+        padding-left: 0.5rem;
+        line-height: 1.3;
+    }
+
+    .politica-de-privacidade-content p {
+        font-size: clamp(0.7rem, 4vw, 0.85rem);
+        line-height: 1.5;
+        margin-bottom: 0.8rem;
+    }
+
+    .politica-de-privacidade-content ul {
+        margin: 1rem 0;
+    }
+
+    .politica-de-privacidade-content ul li {
+        font-size: clamp(0.65rem, 4vw, 0.8rem);
+        padding-left: 1rem;
+        margin-bottom: 0.3rem;
+        line-height: 1.4;
+    }
+
+    .politica-de-privacidade-content ul li::before {
+        left: 0.1rem;
+        top: 0.3rem;
+        width: 2px;
+        height: 2px;
+    }
+
+    .contact-box {
+        padding: 1rem 0.6rem !important;
+        margin: 1rem 0 !important;
+        border-radius: 6px !important;
+    }
+
+    .contact-box::before {
+        top: -0.2rem;
+        right: 0.4rem;
+        width: 1rem;
+        height: 1rem;
+        font-size: 0.5rem;
+    }
+
+    .contact-box p {
+        font-size: clamp(0.7rem, 4.5vw, 0.85rem) !important;
+        margin-bottom: 0.6rem !important;
+    }
+
+    .contact-box p strong {
+        font-size: clamp(0.75rem, 5vw, 0.9rem) !important;
+    }
+
+    .politica-de-privacidade-content .final-note {
+        padding: 0.6rem !important;
+        margin: 1rem 0 0 0 !important;
+        font-size: clamp(0.65rem, 4vw, 0.75rem) !important;
+        line-height: 1.4 !important;
+    }
+}
+
+/* Telas extremamente pequenas */
+@media (max-width: 280px) {
+    .container {
+        padding: 0 0.125rem;
+    }
+
+    .politica-de-privacidade-content {
+        padding: 0.75rem 0.5rem;
+        border-radius: 6px;
+    }
+
+    .politica-de-privacidade-content h2 {
+        font-size: clamp(1rem, 10vw, 1.3rem);
+        margin-bottom: 0.8rem;
+    }
+
+    .politica-de-privacidade-content h3 {
+        font-size: clamp(0.75rem, 7vw, 0.9rem);
+        margin: 1rem 0 0.5rem 0;
+        padding-left: 0.4rem;
+    }
+
+    .politica-de-privacidade-content h4 {
+        font-size: clamp(0.7rem, 6vw, 0.8rem);
+        margin: 0.6rem 0 0.3rem 0;
+        padding-left: 0.4rem;
+    }
+
+    .politica-de-privacidade-content p {
+        font-size: clamp(0.65rem, 5vw, 0.75rem);
+        margin-bottom: 0.6rem;
+    }
+
+    .politica-de-privacidade-content ul li {
+        font-size: clamp(0.6rem, 5vw, 0.7rem);
+        padding-left: 0.8rem;
+    }
+
+    .contact-box {
+        padding: 0.8rem 0.4rem !important;
+        margin: 0.8rem 0 !important;
+    }
+
+    .contact-box::before {
+        width: 0.8rem;
+        height: 0.8rem;
+        font-size: 0.4rem;
+        top: -0.15rem;
+        right: 0.3rem;
+    }
+
+    .contact-box p {
+        font-size: clamp(0.65rem, 5.5vw, 0.75rem) !important;
+    }
+
+    .contact-box p strong {
+        font-size: clamp(0.7rem, 6vw, 0.8rem) !important;
+    }
+}
+
+/* Melhorias para toque em dispositivos móveis */
+@media (hover: none) and (pointer: coarse) {
+    .politica-de-privacidade-content a {
+        padding: 0.3rem 0;
+        min-height: 44px;
+        display: inline-block;
+    }
+}
+
+/* Melhor legibilidade em telas pequenas */
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .politica-de-privacidade-content {
+        font-size: 16px; /* Previne zoom automático no iOS */
+    }
+}
+
+/* Ajustes para landscape em telas muito pequenas */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .politica-de-privacidade-section {
+        padding: 1rem 0;
+    }
+    
+    .politica-de-privacidade-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .politica-de-privacidade-content h2 {
+        margin-bottom: 1rem;
+    }
+    
+    .politica-de-privacidade-content h3 {
+        margin: 1.5rem 0 0.8rem 0;
+    }
+}
+
+/* Suporte para telas de alta densidade (retina) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .politica-de-privacidade-content::before {
+        height: 1px;
+    }
+    
+    .politica-de-privacidade-content h2::after {
+        height: 0.5px;
+    }
+}
