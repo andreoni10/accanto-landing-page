@@ -46,6 +46,7 @@ def handle_contact_form(request):
                 )
 
                 if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                    print("Email enviado com sucesso!")
                     return form, JsonResponse({'success': True, 'message': 'Mensagem enviada com sucesso!'})
                     
             except Exception as e:
