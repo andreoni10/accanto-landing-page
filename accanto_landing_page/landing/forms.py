@@ -1,7 +1,6 @@
 from django import forms
 from django.core import validators
 
-
 class FormContact(forms.Form):
     name = forms.CharField(widget=forms.TextInput(attrs={'type': 'text', 'id': 'name', 'name': 'name', 'placeholder': 'Digite seu nome'}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={'type': 'email', 'id': 'email', 'name': 'email', 'placeholder': 'Digite seu email'}))

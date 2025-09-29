@@ -6,7 +6,6 @@ from landing import forms
 
 import os
 from dotenv import load_dotenv
-# Load environment variables from .env file
 load_dotenv()
 
 EMAIL_RECIPIENTS = os.getenv('EMAIL_RECIPIENTS')
@@ -56,7 +55,6 @@ def handle_contact_form(request):
 
     return form, None
 
-# Create your views here.
 def index(request):
     form, json_response = handle_contact_form(request)
     
