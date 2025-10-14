@@ -55,7 +55,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -136,17 +135,6 @@ STATIC_URL = '/static/'
 
 # Diretório onde os arquivos estáticos serão coletados em produção
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
-
-# Configuração do WhiteNoise
-STORAGES = {
-    "default": {
-        "BACKEND": "django.core.files.storage.FileSystemStorage",
-    },
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
 
 
 # Default primary key field type
