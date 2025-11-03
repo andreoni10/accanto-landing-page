@@ -275,7 +275,8 @@
 }
 
 .nossa-equipe-image {
-    min-height: 80vh;
+    /* min-height: 80vh; */
+    min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
@@ -289,7 +290,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    /* background: url('../images/nossa_equipe/hero-image-2.jpg') center/cover; */
-    background: url('../images/nossa_equipe/image_equipe.jpg') center/cover;
-    opacity: 0.4;
+    /* background: url('../images/nossa_equipe/image_equipe.jpg') center/cover; */
+    background: url('../images/nossa_equipe/image_accanto.jpg') center/cover;
+    /* opacity: 0.4; */
+    opacity: 0.6;
 }
