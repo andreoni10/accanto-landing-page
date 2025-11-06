@@ -290,7 +290,5 @@
     right: 0;
     bottom: 0;
     background: url('../images/nossa_equipe/image_equipe.jpg') center/cover;
-    /* background: url('../images/nossa_equipe/image_accanto.jpg') center/cover; */
-    opacity: 0.4;
-    /* opacity: 0.6; */
+    opacity: 0.6;
 }
