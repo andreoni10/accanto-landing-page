@@ -12,6 +12,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="icon" sizes="144x144" href="{% static 'landing/images/favicon.ico' %}" />
+    <script type="application/ld+json">
+      // Pesquisa Google
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Accanto Investimentos",
+        "url": "https://accantoinvestimentos.com.br"
+      }
+    </script>
     {% block extra_head %}
     {% endblock %}
   </head>
@@ -228,15 +237,6 @@
         if (event.target == modal) {
           hideModal()
         }
-      }
-    </script>
-    <script type="application/ld+json">
-      // Pesquisa Google
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Accanto Investimentos",
-        "url": "https://accantoinvestimentos.com.br"
       }
     </script>
   </body>
