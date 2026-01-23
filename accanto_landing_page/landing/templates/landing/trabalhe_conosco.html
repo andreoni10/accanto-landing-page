@@ -1,0 +1,134 @@
+{% extends 'landing/base.html' %}
+{% load static %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'landing/css/styles_trabalhe_conosco.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <!-- Hero Section -->
+  <section id="trabalhe-conosco-hero" class="trabalhe-conosco-hero">
+    <div class="trabalhe-conosco-hero-background"></div>
+    <div class="container">
+      <div class="trabalhe-conosco-hero-content">
+        <h1 class="trabalhe-conosco-hero-title">Faça parte do time Accanto. <span class="highlight-word">Juntos</span>, vamos transformar o mercado de investimentos.</h1>
+        <p class="trabalhe-conosco-hero-subtitle">Aqui você encontra suporte, estrutura e autonomia para desenvolver sua carreira com ética, transparência e foco em resultados — construindo relacionamentos duradouros com seus clientes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nossa Equipe -->
+  <section id="trabalhe-conosco" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Junte-se ao Time Accanto</h2>
+        <p>Preencha o formulário abaixo e venha fazer parte de uma equipe que valoriza excelência, transparência e desenvolvimento profissional no mercado de investimentos.</p>
+      </div>
+
+      <!-- Formulário -->
+      <form class="work-with-us-form" method="POST">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          {{ form.name }}
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          {{ form.email }}
+        </div>
+
+        <div class="form-group">
+          <label for="telefone">Telefone</label>
+          {{ form.telephone }}
+        </div>
+
+        <div class="form-group">
+          <label for="linkedin">LinkedIn</label>
+          {{ form.linkedin }}
+        </div>
+
+        <div class="form-group form-consent">
+          {{ form.data_consent }}
+          <label for="data_consent">{{ form.data_consent.label }}</label>
+        </div>
+        {% csrf_token %}
+        <button type="submit" class="card-btn">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Intersection Observer para ativar animação quando elemento entra na viewport
+      const highlightWords = document.querySelectorAll('.highlight-word')
+    
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate')
+            }
+          })
+        },
+        {
+          threshold: 0.5,
+          rootMargin: '0px 0px -50px 0px'
+        }
+      )
+    
+      highlightWords.forEach((word) => {
+        observer.observe(word)
+      })
+    })
+
+    // Envio do formulário via AJAX
+      document.querySelector('.work-with-us-form').addEventListener('submit', function (e) {
+        e.preventDefault() // Previne o comportamento padrão do formulário
+      
+        const form = this
+        const submitBtn = form.querySelector('button[type="submit"]')
+        const originalText = submitBtn.textContent
+      
+        // Mostra estado de carregamento
+        submitBtn.textContent = 'Enviando...'
+        submitBtn.disabled = true
+      
+        // Coleta os dados do formulário
+        const formData = new FormData(form)
+      
+        // Envia via AJAX
+        fetch(window.location.pathname, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+          }
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              // Sucesso - mostra mensagem e limpa formulário
+              alert('Mensagem enviada com sucesso! Entraremos em contato em breve.')
+              form.reset()
+            } else {
+              // Erro - mostra erros
+              let errorMessage = 'Erro ao enviar formulário:\n'
+              for (let field in data.errors) {
+                errorMessage += `${field}: ${data.errors[field].join(', ')}\n`
+              }
+              alert(errorMessage)
+            }
+          })
+          .catch((error) => {
+            console.error('Erro:', error)
+            alert('Erro ao enviar formulário. Tente novamente.')
+          })
+          .finally(() => {
+            // Restaura botão
+            submitBtn.textContent = originalText
+            submitBtn.disabled = false
+          })
+      })
+  </script>
+{% endblock %}

@@ -7,7 +7,7 @@ class StaticViewSitemap(Sitemap):
 
     def items(self):
         # nomes das rotas definidas em landing/urls.py
-        return ['index', 'nossa_equipe', 'politica_de_privacidade']
+        return ['index', 'nossa_equipe', 'politica_de_privacidade', 'trabalhe_conosco']
 
     def location(self, item):
         return reverse(item)

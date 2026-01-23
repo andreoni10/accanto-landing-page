@@ -1,0 +1,288 @@
+/* Trabalhe Conosco Hero */
+.trabalhe-conosco-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(135deg, var(--gold) -600%, rgba(0, 0, 0, 0.1) 85%);
+}
+
+.trabalhe-conosco-hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/trabalhe_conosco/hero_trabalhe_conosco.jpg') center/cover;
+    opacity: 0.4;
+}
+
+.trabalhe-conosco-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.trabalhe-conosco-hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.trabalhe-conosco-hero-subtitle {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+/* Animação de sublinhado para palavra específica */
+.highlight-word {
+    position: relative;
+    display: inline-block;
+    color: var(--gold) !important;
+    -webkit-text-fill-color: var(--gold) !important;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+}
+
+.highlight-word::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), #ffeb3b);
+    transition: width 2s ease-in-out;
+    border-radius: 2px;
+}
+
+/* Animação quando elemento entra na viewport */
+.highlight-word.animate::after {
+    width: 100%;
+}
+
+/* --------------------------
+   FORM — Black Minimal Unique
+   -------------------------- */
+
+/* Container com “aura” discreta e borda premium */
+.work-with-us-form {
+    position: relative;
+    background: #06070a;
+    border-radius: 18px;
+    padding: 2.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+    overflow: hidden;
+}
+
+.work-with-us-form::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: radial-gradient(900px 240px at 25% 0%, rgba(255, 215, 0, 0.18), transparent 60%),
+                radial-gradient(700px 220px at 90% 30%, rgba(255, 215, 0, 0.10), transparent 55%);
+    pointer-events: none;
+}
+
+.work-with-us-form::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, rgba(255, 215, 0, 0.10), transparent 30%),
+        linear-gradient(0deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.00));
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* Escopo total dos campos (não “vaza” estilo) */
+.work-with-us-form .form-group {
+    position: relative;
+    margin-bottom: 1.15rem;
+    z-index: 1;
+}
+
+/* Label minimal: pequena e elegante */
+.work-with-us-form .form-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.70);
+    margin-bottom: 0.55rem;
+    transition: color .18s ease;
+}
+
+/* Efeito de foco por grupo */
+.work-with-us-form .form-group:focus-within label {
+    color: rgba(255, 215, 0, 0.92);
+}
+
+/* Inputs: minimal “underline”, sem caixa */
+.work-with-us-form .form-group input,
+.work-with-us-form .form-group textarea {
+    width: 100%;
+    padding: 0.85rem 0.1rem;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.92);
+
+    border: none;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.16);
+    border-radius: 0;
+
+    font-family: inherit;
+    font-size: 1rem;
+
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.work-with-us-form .form-group input::placeholder,
+.work-with-us-form .form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.42);
+}
+
+.work-with-us-form .form-group input:focus,
+.work-with-us-form .form-group textarea:focus {
+    outline: none;
+    border-bottom-color: rgba(255, 215, 0, 0.95);
+    box-shadow: 0 10px 22px -18px rgba(255, 215, 0, 0.6);
+}
+
+/* Linha dourada animada no foco (bem “única”) */
+.work-with-us-form .form-group::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--gold), rgba(255, 235, 59, 0.5));
+    border-radius: 2px;
+    transition: width .28s ease;
+}
+
+.work-with-us-form .form-group:focus-within::after {
+    width: 100%;
+}
+
+/* Consent: bloco dark com borda sutil */
+.work-with-us-form .form-group.form-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-top: 1.35rem;
+    padding: 1rem;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.work-with-us-form .form-group.form-consent::after {
+    display: none; /* desliga a linha animada nesse bloco */
+}
+
+.work-with-us-form .form-group.form-consent input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    border-radius: 7px;
+    border: 2px solid rgba(255, 255, 255, 0.24);
+    background: transparent;
+
+    position: relative;
+    cursor: pointer;
+    transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
+    flex-shrink: 0;
+}
+
+.work-with-us-form .form-group.form-consent input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 11px;
+    border: 2.5px solid #0b0f14;
+    border-top: 0;
+    border-left: 0;
+    transform: translate(-50%, -58%) rotate(45deg) scale(0);
+    transition: transform .18s ease;
+}
+
+.work-with-us-form .form-group.form-consent input[type="checkbox"]:checked {
+    background: linear-gradient(135deg, var(--gold), #ffeb3b);
+    border-color: rgba(255, 215, 0, 0.95);
+    box-shadow: 0 0 0 5px rgba(255, 215, 0, 0.12);
+}
+
+.work-with-us-form .form-group.form-consent input[type="checkbox"]:checked::after {
+    transform: translate(-50%, -58%) rotate(45deg) scale(1);
+}
+
+.work-with-us-form .form-group.form-consent label {
+    font-size: 0.88rem;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.72);
+    margin: 0;
+}
+
+/* Botão: minimal “outline” (sem gradiente) */
+.work-with-us-form .card-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.25rem;
+
+    background: transparent;
+    color: rgba(255, 255, 255, 0.92);
+    border: 1.5px solid rgba(255, 215, 0, 0.70);
+    border-radius: 14px;
+
+    padding: 0.95rem 1.25rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+}
+
+.work-with-us-form .card-btn:hover {
+    background: rgba(255, 215, 0, 0.92);
+    color: #0b0f14;
+    box-shadow: 0 14px 40px rgba(255, 215, 0, 0.18);
+    transform: translateY(-1px);
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+    .work-with-us-form {
+        padding: 1.75rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .work-with-us-form,
+    .work-with-us-form .form-group::after,
+    .work-with-us-form .card-btn {
+        transition: none;
+        transform: none;
+    }
+}

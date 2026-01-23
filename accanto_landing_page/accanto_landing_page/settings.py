@@ -36,7 +36,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY", default='')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv("DEBUG", default='')
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', 'accantoinvestimentos.com.br', 'www.accantoinvestimentos.com.br']
 
@@ -136,7 +136,10 @@ STATIC_URL = '/static/'
 
 
 # Diretório onde os arquivos estáticos serão coletados em produção
-STATIC_ROOT = BASE_DIR / "staticfiles"
+if DEBUG:
+    pass
+else:
+    STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 # Configuração do WhiteNoise

@@ -14,13 +14,29 @@
     <link rel="icon" sizes="144x144" href="{% static 'landing/images/favicon.ico' %}" />
     <script type="application/ld+json">
       {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Accanto Investimentos",
-        "url": "https://accantoinvestimentos.com.br"
+        "@context":"https://schema.org/",
+        "@type":"LocalBusiness",
+        "name":"Accanto Investimentos",
+        "url":"https://www.accantoinvestimentos.com.br",
+        "address":
+          {
+            "@type":"PostalAddress",
+            "addressCountry":"BR",
+            "addressLocality":"Recife",
+            "addressRegion":"PE"
+          }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context":"https://schema.org/",
+        "@type":"WebSite",
+        "name":"Accanto Investimentos",
+        "url":"https://www.accantoinvestimentos.com.br"
       }
     </script>
     {% block extra_head %}
+
     {% endblock %}
   </head>
 
@@ -35,11 +51,12 @@
         </div>
 
         <nav class="nav-menu" id="nav-menu">
-          <a href="{% url 'index' %}#home" class="nav-link">Início</a>
-          <a href="{% url 'index' %}#sobre-a-accanto" class="nav-link">Sobre a Accanto</a>
+          {% comment %} <a href="{% url 'index' %}#home" class="nav-link">Início</a> {% endcomment %}
+          <a href="{% url 'index' %}#sobre-a-accanto" class="nav-link">Sobre nós</a>
           <a href="{% url 'index' %}#produtos-servicos" class="nav-link">Produtos &amp; Serviços</a>
           <a href="{% url 'nossa_equipe' %}" class="nav-link">Nossa Equipe</a>
           <a href="{% url 'index' %}#contato" class="nav-link">Contato</a>
+          <a href="{% url 'trabalhe_conosco' %}" class="nav-link">Trabalhe conosco</a>
           <button id="abraSuaContaNavBtn" class="btn btn-secondary">Abra sua conta</button>
         </nav>
 
@@ -74,6 +91,7 @@
               <a href="{% url 'index' %}#produtos-servicos">Produtos &amp; Serviços</a>
               <a href="{% url 'nossa_equipe' %}">Nossa Equipe</a>
               <a href="{% url 'index' %}#contato">Contato</a>
+              <a href="{% url 'trabalhe_conosco' %}">Trabalhe conosco</a>
               <a href="{% url 'politica_de_privacidade' %}">Politica de Privacidade</a>
             </div>
 
@@ -84,7 +102,9 @@
 
               <br /><br />
               <br /><br /><br />
-              <p>Site desenvolvido por:<br />Lucas Hernandes Andreoni</p>
+              <p>
+                Site desenvolvido por:<br />Lucas Hernandes Andreoni
+              </p>
             </div>
           </div>
         </div>
@@ -97,48 +117,48 @@
     </footer>
 
     <!-- Modal -->
-      <div id="modal" class="modal">
-        <div class="modal-header">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-          </svg>
-        </div>
-        <div class="modal-body">
-          <div>
-            <h2>Invista com um de nossos assessores</h2>
-            <p>Escolha um de nossos assessores para ajudá-lo a investir.</p>
-            <br />
-            <hr style="color: white; -webkit-mask: linear-gradient(270deg, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 60%); mask: linear-gradient(270deg, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 70%);" />
-            <br />
-            <ul>
-              <li>
-                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A42197" target="_blank" class="nav-link">Henrique de Castro Andreoni (Head da operação)</a>
-              </li>
-              <li>
-                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A95333" target="_blank" class="nav-link">Antônio Vicente de Souza Albuquerque Filho</a>
-              </li>
-              <li>
-                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A43115" target="_blank" class="nav-link">Claudia Carolina Lemos Silva Bitu</a>
-              </li>
-              <li>
-                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A21539" target="_blank" class="nav-link">Edlaine Carvalho Bezerra</a>
-              </li>
-              <li>
-                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A43091" target="_blank" class="nav-link">Erika Renata de Barros Leite Cabral Silva</a>
-              </li>
-              <li>
-                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A42669" target="_blank" class="nav-link">José Henrique dos Santos</a>
-              </li>
-              <li>
-                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A43086" target="_blank" class="nav-link">Manuella Garret de Melo Carrazzone</a>
-              </li>
-              <li>
-                <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A26702" target="_blank" class="nav-link">Rafaela Tribuzi Lula Maia</a>
-              </li>
-            </ul>
-          </div>
+    <div id="modal" class="modal">
+      <div class="modal-header">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </div>
+      <div class="modal-body">
+        <div>
+          <h2>Invista com um de nossos assessores</h2>
+          <p>Escolha um de nossos assessores para ajudá-lo a investir.</p>
+          <br />
+          <hr style="color: white; -webkit-mask: linear-gradient(270deg, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 60%); mask: linear-gradient(270deg, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 70%);" />
+          <br />
+          <ul>
+            <li>
+              <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A42197" target="_blank" class="nav-link">Henrique de Castro Andreoni (Head da operação)</a>
+            </li>
+            <li>
+              <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A95333" target="_blank" class="nav-link">Antônio Vicente de Souza Albuquerque Filho</a>
+            </li>
+            <li>
+              <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A43115" target="_blank" class="nav-link">Claudia Carolina Lemos Silva Bitu</a>
+            </li>
+            <li>
+              <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A21539" target="_blank" class="nav-link">Edlaine Carvalho Bezerra</a>
+            </li>
+            <li>
+              <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A43091" target="_blank" class="nav-link">Erika Renata de Barros Leite Cabral Silva</a>
+            </li>
+            <li>
+              <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A42669" target="_blank" class="nav-link">José Henrique dos Santos</a>
+            </li>
+            <li>
+              <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A43086" target="_blank" class="nav-link">Manuella Garret de Melo Carrazzone</a>
+            </li>
+            <li>
+              <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A26702" target="_blank" class="nav-link">Rafaela Tribuzi Lula Maia</a>
+            </li>
+          </ul>
         </div>
       </div>
+    </div>
 
     <!-- WhatsApp Float Button -->
     <div class="whatsapp-float">

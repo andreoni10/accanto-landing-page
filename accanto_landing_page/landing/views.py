@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 EMAIL_RECIPIENTS = os.getenv('EMAIL_RECIPIENTS')
+EMAIL_WORK_WITH_US_RECIPIENTS = os.getenv('EMAIL_WORK_WITH_US_RECIPIENTS')
 
 def handle_contact_form(request):
     """
@@ -55,6 +56,51 @@ def handle_contact_form(request):
 
     return form, None
 
+def handle_work_with_us_form(request):
+    """
+    Processa o formulário de contato e envia email.
+    Retorna uma tupla (form, json_response) onde json_response é None se não for AJAX.
+    """
+    form = forms.FormWorkWithUs()
+
+    if request.method == 'POST':
+        form = forms.FormWorkWithUs(request.POST)
+
+        if form.is_valid() and form.cleaned_data.get('data_consent') == True:
+            print('VALIDATION SUCESS!')
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            telephone = form.cleaned_data['telephone']
+            linkedin = form.cleaned_data['linkedin']
+            
+            # Corpo do e-mail
+            corpo_email = (
+                f"Nome: {name}\n"
+                f"Email: {email}\n"
+                f"Telefone: {telephone}\n"
+                f"LinkedIn: {linkedin}"
+            )
+            
+            try:
+                send_mail(
+                    f"Formulário Trabalhe Conosco: {name}",
+                    corpo_email,
+                    settings.DEFAULT_FROM_EMAIL,
+                    [EMAIL_WORK_WITH_US_RECIPIENTS],
+                    fail_silently=False,
+                )
+
+                if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                    print("Email enviado com sucesso!")
+                    return form, JsonResponse({'success': True, 'message': 'Mensagem enviada com sucesso!'})
+                    
+            except Exception as e:
+                print(f"Erro ao enviar e-mail: {e}")
+                if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                    return form, JsonResponse({'success': False, 'errors': form.errors})
+
+    return form, None
+
 def index(request):
     form, json_response = handle_contact_form(request)
     
@@ -70,6 +116,14 @@ def nossos_assessores(request):
         return json_response
         
     return render(request, 'landing/nossa_equipe.html', {'form': form})
+
+def trabalhe_conosco(request):
+    form, json_response = handle_work_with_us_form(request)
+    
+    if json_response:
+        return json_response
+        
+    return render(request, 'landing/trabalhe_conosco.html', {'form': form})
 
 def politica_de_privacidade(request):
     return render(request, 'landing/politica_de_privacidade.html')
