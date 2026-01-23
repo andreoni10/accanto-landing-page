@@ -1,5 +1,5 @@
-/* Nossos Assessores */
-.nossa-equipe-hero {
+/* Trabalhe Conosco Hero */
+.trabalhe-conosco-hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -8,18 +8,17 @@
     background-image: linear-gradient(135deg, var(--gold) -600%, rgba(0, 0, 0, 0.1) 85%);
 }
 
-.nossa-equipe-hero-background {
+.trabalhe-conosco-hero-background {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    /* background: url('../images/nossa_equipe/hero-image-2.jpg') center/cover; */
     background: url('../images/trabalhe_conosco/hero_trabalhe_conosco.jpg') center/cover;
     opacity: 0.4;
 }
 
-.nossa-equipe-hero-content {
+.trabalhe-conosco-hero-content {
     position: relative;
     z-index: 2;
     text-align: left;
@@ -28,7 +27,7 @@
     margin: 0 auto;
 }
 
-.nossa-equipe-hero-title {
+.trabalhe-conosco-hero-title {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     line-height: 1.2;
@@ -39,7 +38,7 @@
     background-clip: text;
 }
 
-.nossa-equipe-hero-subtitle {
+.trabalhe-conosco-hero-subtitle {
     font-size: 1.25rem;
     color: #cbd5e1;
     margin-bottom: 2.5rem;
@@ -74,275 +73,216 @@
     width: 100%;
 }
 
-/* Variação com animação automática ao carregar */
-.highlight-word.auto-animate::after {
-    animation: underlineExpand 2.5s ease-in-out 0.8s forwards;
-}
+/* --------------------------
+   FORM — Black Minimal Unique
+   -------------------------- */
 
-@keyframes underlineExpand {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 100%;
-    }
-}
-
-/* Variação com efeito pulsante */
-.highlight-word.pulse::after {
-    width: 100%;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        opacity: 1;
-        transform: scaleY(1);
-    }
-
-    50% {
-        opacity: 0.7;
-        transform: scaleY(0.8);
-    }
-}
-
-.equipe-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    justify-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 3rem;
-}
-
-/* Responsividade para diferentes tamanhos de tela */
-@media (max-width: 1200px) {
-    .equipe-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 900px) {
-    .equipe-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .equipe-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        padding: 0 1rem;
-    }
-}
-
-
-/* ========================================
-             CARD-equipe COMPONENTS
-          ======================================== */
-.card-equipe {
-    border: none;
+/* Container com “aura” discreta e borda premium */
+.work-with-us-form {
     position: relative;
-    width: 16rem;
-    height: 35rem;
-    border-radius: 0.5rem;
-    display: flex;
-    flex-direction: column;
+    background: #06070a;
+    border-radius: 18px;
+    padding: 2.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card-equipe:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-.card-equipe img {
-    border-radius: 0;
-    width: 100%;
-    height: 55%;
-    object-fit: cover;
-    opacity: 0.95;
-    transition: opacity 0.3s ease;
-    flex-shrink: 0;
-}
-
-.card-equipe img:hover {
-    opacity: 1;
-}
-
-.card-equipe-footer {
-    position: relative;
-    width: 100%;
-    height: 34%;
-    padding: 1rem 1.25rem 1.25rem 1.25rem;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    border-radius: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-shrink: 0;
-}
-
-.card-equipe-footer::before {
-    content: '';
+.work-with-us-form::before {
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--gold), #ffeb3b);
+    inset: -2px;
+    background: radial-gradient(900px 240px at 25% 0%, rgba(255, 215, 0, 0.18), transparent 60%),
+                radial-gradient(700px 220px at 90% 30%, rgba(255, 215, 0, 0.10), transparent 55%);
+    pointer-events: none;
 }
 
-.card-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    margin-bottom: 0.5rem;
+.work-with-us-form::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, rgba(255, 215, 0, 0.10), transparent 30%),
+        linear-gradient(0deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.00));
+    pointer-events: none;
+    opacity: 0.7;
 }
 
-.card-name {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin: 0;
-    line-height: 1.1;
+/* Escopo total dos campos (não “vaza” estilo) */
+.work-with-us-form .form-group {
+    position: relative;
+    margin-bottom: 1.15rem;
+    z-index: 1;
 }
 
-.card-position {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--gold);
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.card-subtitle {
-    font-size: 0.75rem;
-    color: #cbd5e1;
-    margin: 0;
-    font-style: italic;
-}
-
-.card-divider {
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #444, transparent);
-    margin: 0.5rem 0;
-    border: none;
-    flex-shrink: 0;
-}
-
-.card-btn {
+/* Label minimal: pequena e elegante */
+.work-with-us-form .form-group label {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--gold), #ffeb3b);
-    color: #1a1a1a;
-    text-decoration: none;
-    border-radius: 20px;
-    padding: 0.6rem 1.2rem;
+    gap: .5rem;
     font-weight: 600;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.70);
+    margin-bottom: 0.55rem;
+    transition: color .18s ease;
+}
+
+/* Efeito de foco por grupo */
+.work-with-us-form .form-group:focus-within label {
+    color: rgba(255, 215, 0, 0.92);
+}
+
+/* Inputs: minimal “underline”, sem caixa */
+.work-with-us-form .form-group input,
+.work-with-us-form .form-group textarea {
+    width: 100%;
+    padding: 0.85rem 0.1rem;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.92);
+
     border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(231, 183, 26, 0.3);
-    flex-shrink: 0;
-    white-space: nowrap;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.16);
+    border-radius: 0;
+
+    font-family: inherit;
+    font-size: 1rem;
+
+    transition: border-color .2s ease, box-shadow .2s ease;
 }
 
-.card-btn:hover {
-    background: linear-gradient(135deg, #ffeb3b, var(--gold));
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(231, 183, 26, 0.4);
-    color: #1a1a1a;
+.work-with-us-form .form-group input::placeholder,
+.work-with-us-form .form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.42);
 }
 
-.card-btn:active {
-    transform: translateY(0);
+.work-with-us-form .form-group input:focus,
+.work-with-us-form .form-group textarea:focus {
+    outline: none;
+    border-bottom-color: rgba(255, 215, 0, 0.95);
+    box-shadow: 0 10px 22px -18px rgba(255, 215, 0, 0.6);
 }
 
-.nossa-equipe-image {
-    min-height: 100vh;
+/* Linha dourada animada no foco (bem “única”) */
+.work-with-us-form .form-group::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--gold), rgba(255, 235, 59, 0.5));
+    border-radius: 2px;
+    transition: width .28s ease;
+}
+
+.work-with-us-form .form-group:focus-within::after {
+    width: 100%;
+}
+
+/* Consent: bloco dark com borda sutil */
+.work-with-us-form .form-group.form-consent {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-top: 1.35rem;
+    padding: 1rem;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.work-with-us-form .form-group.form-consent::after {
+    display: none; /* desliga a linha animada nesse bloco */
+}
+
+.work-with-us-form .form-group.form-consent input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    border-radius: 7px;
+    border: 2px solid rgba(255, 255, 255, 0.24);
+    background: transparent;
+
     position: relative;
-    overflow: hidden;
-    background-image: linear-gradient(135deg, var(--gold) -600%, rgba(0, 0, 0, 0.1) 85%);
+    cursor: pointer;
+    transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
+    flex-shrink: 0;
 }
 
-.nossa-equipe-image-background {
+.work-with-us-form .form-group.form-consent input[type="checkbox"]::after {
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('../images/nossa_equipe/image_equipe.jpg') center/cover;
-    opacity: 0.6;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 11px;
+    border: 2.5px solid #0b0f14;
+    border-top: 0;
+    border-left: 0;
+    transform: translate(-50%, -58%) rotate(45deg) scale(0);
+    transition: transform .18s ease;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Container for the video */
-.video-background {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    /* Ensures no scrollbars if video overflows slightly */
-    z-index: -100;
-    /* Places the container behind all other content */
+.work-with-us-form .form-group.form-consent input[type="checkbox"]:checked {
+    background: linear-gradient(135deg, var(--gold), #ffeb3b);
+    border-color: rgba(255, 215, 0, 0.95);
+    box-shadow: 0 0 0 5px rgba(255, 215, 0, 0.12);
 }
 
-/* Styling the video element itself */
-#bg-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    /* Ensures the video covers the entire container without distortion */
+.work-with-us-form .form-group.form-consent input[type="checkbox"]:checked::after {
+    transform: translate(-50%, -58%) rotate(45deg) scale(1);
 }
 
-/* Styling the content overlay */
-.content {
-    position: relative;
-    /* Ensures content is positioned relative to its normal flow and can use z-index */
-    z-index: 1;
-    /* Places content above the video background */
-    text-align: center;
-    color: white;
-    /* Add other styling for visibility (e.g., background overlay to improve text readability) */
+.work-with-us-form .form-group.form-consent label {
+    font-size: 0.88rem;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.72);
+    margin: 0;
+}
+
+/* Botão: minimal “outline” (sem gradiente) */
+.work-with-us-form .card-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.25rem;
+
+    background: transparent;
+    color: rgba(255, 255, 255, 0.92);
+    border: 1.5px solid rgba(255, 215, 0, 0.70);
+    border-radius: 14px;
+
+    padding: 0.95rem 1.25rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+}
+
+.work-with-us-form .card-btn:hover {
+    background: rgba(255, 215, 0, 0.92);
+    color: #0b0f14;
+    box-shadow: 0 14px 40px rgba(255, 215, 0, 0.18);
+    transform: translateY(-1px);
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+    .work-with-us-form {
+        padding: 1.75rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .work-with-us-form,
+    .work-with-us-form .form-group::after,
+    .work-with-us-form .card-btn {
+        transition: none;
+        transform: none;
+    }
 }
