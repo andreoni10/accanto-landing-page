@@ -248,27 +248,103 @@
     margin: 0;
 }
 
-/* Botão: minimal “outline” (sem gradiente) */
-.work-with-us-form .card-btn {
-    width: 100%;
-    justify-content: center;
-    margin-top: 0.25rem;
-
+/* Estilização para campo de upload de arquivo (currículo) */
+.work-with-us-form .form-group input[type="file"] {
+    padding: 0.85rem 0;
     background: transparent;
     color: rgba(255, 255, 255, 0.92);
-    border: 1.5px solid rgba(255, 215, 0, 0.70);
-    border-radius: 14px;
-
-    padding: 0.95rem 1.25rem;
+    border: none;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.16);
+    border-radius: 0;
+    font-family: inherit;
     font-size: 0.95rem;
-    letter-spacing: 0.08em;
+    transition: border-color .2s ease, box-shadow .2s ease;
+    cursor: pointer;
+}
+
+.work-with-us-form .form-group input[type="file"]:focus {
+    outline: none;
+    border-bottom-color: rgba(255, 215, 0, 0.95);
+    box-shadow: 0 10px 22px -18px rgba(255, 215, 0, 0.6);
+}
+
+/* Estilização do texto do file input */
+.work-with-us-form .form-group input[type="file"]::file-selector-button {
+    background: linear-gradient(135deg, var(--gold), #ffeb3b);
+    color: #1a1a1a;
+    border: none;
+    border-radius: 12px;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    margin-right: 0.75rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(231, 183, 26, 0.25);
+}
+
+.work-with-us-form .form-group input[type="file"]::file-selector-button:hover {
+    background: linear-gradient(135deg, #ffeb3b, var(--gold));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(231, 183, 26, 0.35);
+}
+
+/* Para navegadores WebKit */
+.work-with-us-form .form-group input[type="file"]::-webkit-file-upload-button {
+    background: linear-gradient(135deg, var(--gold), #ffeb3b);
+    color: #1a1a1a;
+    border: none;
+    border-radius: 12px;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    margin-right: 0.75rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(231, 183, 26, 0.25);
+}
+
+.work-with-us-form .form-group input[type="file"]::-webkit-file-upload-button:hover {
+    background: linear-gradient(135deg, #ffeb3b, var(--gold));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(231, 183, 26, 0.35);
+}
+
+/* Botão: seguindo padrão do projeto com gradiente dourado */
+.work-with-us-form .card-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: linear-gradient(135deg, var(--gold), #ffeb3b);
+    color: #1a1a1a;
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(231, 183, 26, 0.3);
+    margin-top: 0.25rem;
 }
 
 .work-with-us-form .card-btn:hover {
-    background: rgba(255, 215, 0, 0.92);
-    color: #0b0f14;
-    box-shadow: 0 14px 40px rgba(255, 215, 0, 0.18);
-    transform: translateY(-1px);
+    background: linear-gradient(135deg, #ffeb3b, var(--gold));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 183, 26, 0.4);
+    color: #1a1a1a;
+}
+
+.work-with-us-form .card-btn:active {
+    transform: translateY(0);
 }
 
 /* Responsivo */
