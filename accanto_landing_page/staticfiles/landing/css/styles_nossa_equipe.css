@@ -167,7 +167,7 @@
 .card-equipe img {
     border-radius: 0;
     width: 100%;
-    height: 58%;
+    height: 60%;
     object-fit: cover;
     opacity: 0.95;
     transition: opacity 0.3s ease;
