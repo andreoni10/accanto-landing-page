@@ -136,7 +136,7 @@ STATIC_URL = '/static/'
 
 
 # Diretório onde os arquivos estáticos serão coletados em produção
-STATIC_ROOT = BASE_DIR / "staticfiles"
+# STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 # Configuração do WhiteNoise
